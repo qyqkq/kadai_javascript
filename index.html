@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>ストップウォッチ</title>
+  </head>
+ 
+  <body>
+    <!-- ストップウォッチ -->
+    <div class="container">
+      <h3>ストップウォッチ</h3>
+      <p><span id="hours">0</span>:<span id="minutes">0</span>:<span id="seconds">0</span>:<span id="tens">0</span></p>
+      <ul id="btn">
+        <li class="tim_btn" id="start">スタート</li>
+        <li class="tim_btn grayed_out" id="stop">ストップ</li>
+        <li class="tim_btn grayed_out" id="reset">リセット</li>
+      </ul>
+    </div>
+    <!-- 電卓 -->
+    <div class="container">
+      <h3>電卓</h3>
+      <input type="text" id="result">
+      <div>
+        <input type="button" value="7" onclick="edit(this)">
+        <input type="button" value="8" onclick="edit(this)">
+        <input type="button" value="9" onclick="edit(this)">
+        <input type="button" value="+" onclick="edit(this)">
+      </div>
+      <div>
+        <input type="button" value="4" onclick="edit(this)">
+        <input type="button" value="5" onclick="edit(this)">
+        <input type="button" value="6" onclick="edit(this)">
+        <input type="button" value="-" onclick="edit(this)">
+      </div>
+      <div>
+        <input type="button" value="1" onclick="edit(this)">
+        <input type="button" value="2" onclick="edit(this)">
+        <input type="button" value="3" onclick="edit(this)">
+        <input type="button" value="*" onclick="edit(this)">
+      </div>
+      <div>
+        <input type="button" value="0" onclick="edit(this)">
+        <input type="button" value="00" onclick="edit(this)">
+        <input type="button" value="." onclick="edit(this)">
+        <input type="button" value="/" onclick="edit(this)">
+      </div>
+      <div>
+        <input type="button" style="width:204px;" value="AC" onclick="update()">
+        <input type="button" style="width:204px;" value="=" onclick="calc()">
+      </div>
+    </div>
+    <!-- リアルタイムフィルター -->
+    <div class="container photo">
+      <h3>リアルタイムフィルター</h3>
+      <p>入力した文字を含まない要素は非表示となります</p>
+      <input type="text" id="search">
+      <ul id="images">
+        <li class="image_box">
+          <img src="images/car.jpg" alt="car">
+          <p>キーワード</p>
+          <p>車　くるま　kuruma</p>
+        </li>
+        <li class="image_box">
+          <img src="images/sky.jpg" alt="sky">
+          <p>キーワード</p>
+          <p>青空　あおぞら　aozora</p>
+        </li>
+        <li class="image_box">
+          <img src="images/morning.jpg" alt="morning glory">
+          <p>キーワード</p>
+          <p>朝顔　あさがお　asagao</p>
+        </li>
+        <li class="image_box">
+          <img src="images/horse.jpg" alt="horse">
+          <p>キーワード</p>
+          <p>馬　うま　uma</p>
+        </li>
+      </ul>
+    </div>
+    <!-- slickのスライドショー -->
+    <div class="container black">
+      <h3 class="white">slickのスライドショー</h3>
+      <ul class="slide">
+        <li><img src="images/car.jpg" alt="car"></li>
+        <li><img src="images/sky.jpg" alt="sky"></li>
+        <li><img src="images/morning.jpg" alt="morning glory"></li>
+        <li><img src="images/horse.jpg" alt="horse"></li>
+      </ul>
+      <p class="white">4秒ごとにスライドします</p>
+      <p class="white">左右の矢印を押下でスライドをさせることができます</p>
+    </div>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
